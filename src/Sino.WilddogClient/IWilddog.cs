@@ -21,6 +21,15 @@ namespace Sino.WilddogClient
 		/// <param name="options">用于排序和分页</param>
 		TReturn Query<TReturn>(bool useAuth = false, string auth = "", Options options = null);
 
+        /// <summary>
+        /// 查询数据
+        /// </summary>
+        /// <typeparam name="TReturn"></typeparam>
+        /// <param name="path"></param>
+        /// <param name="useAuth"></param>
+        /// <param name="auth"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
 		TReturn Query<TReturn>(string path, bool useAuth = false, string auth = "", Options options = null);
 
 		string Query(bool useAuth = false, string auth = "", Options options = null);

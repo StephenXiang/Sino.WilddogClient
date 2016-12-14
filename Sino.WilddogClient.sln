@@ -5,9 +5,13 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D7C0BE0-F561-4AE6-A1D1-CD976BC349B0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1DB0D3FC-E6BA-4D94-9563-CAF34980F205}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{1DB0D3FC-E6BA-4D94-9563-CAF34980F205}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		Build.ps1 = Build.ps1
 		global.json = global.json
+		LICENSE = LICENSE
+		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.WilddogClient", "src\Sino.WilddogClient\Sino.WilddogClient.xproj", "{E2F0098D-BBDC-4556-BBFB-0E55B47462B8}"

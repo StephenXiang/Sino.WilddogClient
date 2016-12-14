@@ -7,7 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D7C0BE0-F56
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{1DB0D3FC-E6BA-4D94-9563-CAF34980F205}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		Build.ps1 = Build.ps1
 		global.json = global.json
+		LICENSE = LICENSE
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject

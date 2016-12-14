@@ -1,3 +1,12 @@
-﻿# 野狗SDK（未配置appveyor）
+﻿## 野狗SDK
+======
+
+[![Build status](https://ci.appveyor.com/api/projects/status/yrc3p78v6ivuqgrm/branch/dev?svg=true)](https://ci.appveyor.com/project/vip56/sino-wilddogclient/branch/dev)
+[![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg?style=plastic)](https://www.nuget.org/packages/Sino.WilddogClient)
+
+### 安装
+```
+Install-Package Sino.WilddogClient
+```
 
 后台开发组提供支持

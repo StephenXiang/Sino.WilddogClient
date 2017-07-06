@@ -133,29 +133,55 @@ namespace Sino.WilddogClient
 			return InsertAsync(data, useAuth, auth).Result;
 		}
 
-		public string Insert(string path, object data, bool useAuth = false, string auth = "")
+        public string InsertJson(string data, bool useAuth = false, string auth = "")
+        {
+            return InsertJsonAsync(data, useAuth, auth).Result;
+        }
+
+        public string Insert(string path, object data, bool useAuth = false, string auth = "")
 		{
 			return InsertAsync(path, data, useAuth, auth).Result;
 		}
 
-		public TReturn Insert<TReturn>(object data, bool useAuth = false, string auth = "")
+        public string InsertJson(string path, string data, bool useAuth = false, string auth = "")
+        {
+            return InsertJsonAsync(path, data, useAuth, auth).Result;
+        }
+
+        public TReturn Insert<TReturn>(object data, bool useAuth = false, string auth = "")
 		{
 			return InsertAsync<TReturn>(data, useAuth, auth).Result;
 		}
 
-		public TReturn Insert<TReturn>(string path, object data, bool useAuth = false, string auth = "")
+        public TReturn InsertJson<TReturn>(string data, bool useAuth = false, string auth = "")
+        {
+            return InsertJsonAsync<TReturn>(data, useAuth, auth).Result;
+        }
+
+        public TReturn Insert<TReturn>(string path, object data, bool useAuth = false, string auth = "")
 		{
 			return InsertAsync<TReturn>(path, data, useAuth, auth).Result;
 		}
 
-		public Task<string> InsertAsync(object data, bool useAuth = false, string auth = "")
+        public TReturn InsertJson<TReturn>(string path, string data, bool useAuth = false, string auth = "")
+        {
+            return InsertJsonAsync<TReturn>(path, data, useAuth, auth).Result;
+        }
+
+        public Task<string> InsertAsync(object data, bool useAuth = false, string auth = "")
 		{
 			SetAuth(auth);
 			string jsonData = GetJsonString(data);
 			return _http.PostAsync(_url, jsonData, useAuth);
 		}
 
-		public Task<string> InsertAsync(string path, object data, bool useAuth = false, string auth = "")
+        public Task<string> InsertJsonAsync(string data, bool useAuth = false, string auth = "")
+        {
+            SetAuth(auth);
+            return _http.PostAsync(_url, data, useAuth);
+        }
+
+        public Task<string> InsertAsync(string path, object data, bool useAuth = false, string auth = "")
 		{
 			string url = GetPath(_url, path);
 			SetAuth(auth);
@@ -163,19 +189,38 @@ namespace Sino.WilddogClient
 			return _http.PostAsync(url, jsonData, useAuth);
 		}
 
-		public async Task<TReturn> InsertAsync<TReturn>(object data, bool useAuth = false, string auth = "")
+        public Task<string> InsertJsonAsync(string path, string data, bool useAuth = false, string auth = "")
+        {
+            string url = GetPath(_url, path);
+            SetAuth(auth);
+            return _http.PostAsync(url, data, useAuth);
+        }
+
+        public async Task<TReturn> InsertAsync<TReturn>(object data, bool useAuth = false, string auth = "")
 		{
 			string response = await InsertAsync(data, useAuth, auth);
 			return GetObject<TReturn>(response);
 		}
 
-		public async Task<TReturn> InsertAsync<TReturn>(string path, object data, bool useAuth = false, string auth = "")
+        public async Task<TReturn> InsertJsonAsync<TReturn>(string data, bool useAuth = false, string auth = "")
+        {
+            string response = await InsertJsonAsync(data, useAuth, auth);
+            return GetObject<TReturn>(response);
+        }
+
+        public async Task<TReturn> InsertAsync<TReturn>(string path, object data, bool useAuth = false, string auth = "")
 		{
 			string response = await InsertAsync(path, data, useAuth, auth);
 			return GetObject<TReturn>(response);
 		}
 
-		public string Patch(object data, bool useAuth = false, string auth = "")
+        public async Task<TReturn> InsertJsonAsync<TReturn>(string path, string data, bool useAuth = false, string auth = "")
+        {
+            string response = await InsertJsonAsync(path, data, useAuth, auth);
+            return GetObject<TReturn>(response);
+        }
+
+        public string Patch(object data, bool useAuth = false, string auth = "")
 		{
 			return PatchAsync(data, useAuth, auth).Result;
 		}
@@ -314,5 +359,5 @@ namespace Sino.WilddogClient
 			string response = await UpdateAsync(path, data, useAuth, auth);
 			return GetObject<TReturn>(response);
 		}
-	}
+    }
 }

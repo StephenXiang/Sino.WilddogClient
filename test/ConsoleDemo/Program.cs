@@ -11,14 +11,10 @@ namespace ConsoleDemo
         public static void Main(string[] args)
         {
             var wilddog = new WilddogClient("");
-            var child = wilddog.Child("eventdata");
-            var node = child.Child("13.json");
+            var child = wilddog.Child("test");
+            var node = child.Child("a.json");
 
-            string s = node.Insert(new
-            {
-                A = 1,
-                B = "123"
-            });
+            string s = node.InsertJson("{a : 1,b : 'c'}");
         }
     }
 }

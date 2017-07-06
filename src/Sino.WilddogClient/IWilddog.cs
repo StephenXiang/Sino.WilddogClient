@@ -49,24 +49,40 @@ namespace Sino.WilddogClient
 		/// </summary>
 		TReturn Insert<TReturn>(object data, bool useAuth = false, string auth = "");
 
+        TReturn InsertJson<TReturn>(string data, bool useAuth = false, string auth = "");
+
 		TReturn Insert<TReturn>(string path, object data, bool useAuth = false, string auth = "");
+
+        TReturn InsertJson<TReturn>(string path, string data, bool useAuth = false, string auth = "");
 
 		string Insert(object data, bool useAuth = false, string auth = "");
 
+        string InsertJson(string data, bool useAuth = false, string auth = "");
+
 		string Insert(string path, object data, bool useAuth = false, string auth = "");
+
+        string InsertJson(string path, string data, bool useAuth = false, string auth = "");
 
 		Task<TReturn> InsertAsync<TReturn>(object data, bool useAuth = false, string auth = "");
 
+        Task<TReturn> InsertJsonAsync<TReturn>(string data, bool useAuth = false, string auth = "");
+
 		Task<TReturn> InsertAsync<TReturn>(string path, object data, bool useAuth = false, string auth = "");
+
+        Task<TReturn> InsertJsonAsync<TReturn>(string path, string data, bool useAuth = false, string auth = "");
 
 		Task<string> InsertAsync(object data, bool useAuth = false, string auth = "");
 
-		Task<string> InsertAsync(string path, object data, bool useAuth = false, string auth = "");
+        Task<string> InsertJsonAsync(string data, bool useAuth = false, string auth = "");
 
-		/// <summary>
-		/// 更新数据
-		/// </summary>
-		TReturn Update<TReturn>(object data, bool useAuth = false, string auth = "");
+        Task<string> InsertAsync(string path, object data, bool useAuth = false, string auth = "");
+
+        Task<string> InsertJsonAsync(string path, string data, bool useAuth = false, string auth = "");
+
+        /// <summary>
+        /// 更新数据
+        /// </summary>
+        TReturn Update<TReturn>(object data, bool useAuth = false, string auth = "");
 
 		TReturn Update<TReturn>(string path, object data, bool useAuth = false, string auth = "");
 

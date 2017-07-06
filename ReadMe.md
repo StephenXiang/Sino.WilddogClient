@@ -10,3 +10,6 @@ Install-Package Sino.WilddogClient
 ```
 
 后台开发组提供支持
+
+## 更新记录
+17.7.6 增加InsertJson方法，支持直接写入Json字符串
